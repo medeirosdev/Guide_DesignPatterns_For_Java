@@ -70,3 +70,43 @@ O padrão Abstract Factory é especialmente útil quando você precisa criar obj
 - ConcreteFactory: Implements the operations declared in the AbstractFactory to create concrete product objects.
 - Product: Defines a product object to be created by the corresponding concrete factory and implements the AbstractProduct interface.
 - Client: Uses only interfaces declared by AbstractFactory and AbstractProduct classes.
+
+## Proxy Pattern
+
+O padrão Proxy é um padrão de projeto de software que permite criar um objeto que atua como um substituto ou proxy para outro objeto. O Proxy age como um intermediário entre o cliente e o objeto real e controla o acesso ao objeto real, podendo adicionar funcionalidades extras como cache, controle de acesso, registro de uso, entre outros.
+
+Existem diferentes tipos de proxies, como o Proxy Remoto, que permite que objetos em diferentes máquinas possam se comunicar através de uma rede, e o Proxy Virtual, que cria objetos somente quando são necessários e mantém uma referência a eles para reutilização posterior, a fim de melhorar o desempenho do sistema.
+
+Um exemplo comum do padrão Proxy é o proxy de proteção, que é usado para controlar o acesso a um objeto ou recurso. Imagine que você tenha uma classe que representa um banco de dados, mas você não quer que todos os usuários possam acessar diretamente a classe de banco de dados. Em vez disso, você pode criar uma classe Proxy que verifica se o usuário tem permissão para acessar o banco de dados e, em seguida, encaminha a solicitação para a classe de banco de dados real. Desta forma, o Proxy protege o banco de dados de acesso não autorizado e melhora a segurança do sistema.
+
+Em resumo, o padrão Proxy é utilizado para controlar o acesso a um objeto ou recurso e adiciona funcionalidades extras como cache, controle de acesso, registro de uso, entre outros. Ele é útil quando se deseja adicionar segurança e controle a um objeto ou recurso e quando é necessário limitar o acesso direto ao objeto ou recurso por motivos de segurança ou desempenho.
+
+
+https://www.devmedia.com.br/conheca-o-pattern-proxy-gof-gang-of-four/4066
+https://www.baeldung.com/java-proxy-pattern
+
+## Context and Dependency Injection
+
+Na programação, usamos algo parecido chamado de "injeção de dependência" (ou dependency injection, em inglês). Funciona assim: Imagine que nosso programa é um quebra-cabeça, com várias partes que precisam ser montadas para fazer algo funcionar. Por exemplo, um programa de música precisa de um tocador de música, uma lista de reprodução, uma conexão com a internet e outras coisas.
+
+Com a injeção de dependência, em vez de termos que construir todas as peças do quebra-cabeça sozinhos, podemos receber essas peças de outras partes do programa que já as construíram. Isso nos ajuda a economizar tempo e esforço e torna nosso código mais organizado e fácil de entender.
+
+Por exemplo, imagine que precisamos de um tocador de música para nosso programa. Em vez de construir um novo tocador de música em nosso programa, podemos receber um tocador de música que já foi construído em outra parte do programa e que está disponível para ser usado quando precisarmos.
+
+Isso torna nosso código mais modular e fácil de atualizar. Se precisarmos mudar o tocador de música, por exemplo, podemos simplesmente substituí-lo por outro, sem precisar mudar todo o programa.
+
+Em resumo, a injeção de dependência é uma forma de receber peças de código que já foram construídas por outras partes do programa, em vez de termos que construí-las novamente. Isso nos ajuda a economizar tempo e esforço, torna nosso código mais organizado e fácil de entender, e nos permite atualizar e modificar o código com mais facilidade.
+
+A injeção de dependência é um padrão de design utilizado em programação orientada a objetos que tem como objetivo desacoplar as classes do código, facilitando a manutenção, o teste e a reutilização do código.
+
+Imagine que você está criando um programa que precisa de vários objetos, como por exemplo uma classe para lidar com o banco de dados, uma para fazer requisições HTTP, e uma para fazer cálculos matemáticos. Quando você cria essas classes, elas geralmente precisam umas das outras para funcionar corretamente. Por exemplo, a classe que lida com o banco de dados precisa da classe que faz requisições HTTP para obter informações do servidor.
+
+A injeção de dependência ajuda a resolver esse problema, permitindo que você injete (ou passe) as dependências necessárias para cada classe em vez de criá-las dentro da classe. Isso significa que você não precisa mais instanciar cada dependência dentro da classe, tornando o código mais flexível e mais fácil de testar.
+
+Por exemplo, em vez de criar uma nova instância da classe de banco de dados dentro de outra classe, você pode criar uma instância separada da classe de banco de dados e, em seguida, injetar essa instância na classe que precisa dela.
+
+Existem três tipos de injeção de dependência: injeção de construtor, injeção de método e injeção de propriedade. Na injeção de construtor, as dependências são passadas através do construtor da classe. Na injeção de método, as dependências são passadas através de um método da classe. Na injeção de propriedade, as dependências são passadas através de uma propriedade da classe.
+
+A injeção de dependência é especialmente útil em projetos grandes e complexos, onde as dependências podem ser difíceis de gerenciar. Ao desacoplar as classes do código, a injeção de dependência torna o código mais modular, o que facilita a manutenção, o teste e a reutilização do código.
+
+Em resumo, a injeção de dependência é um padrão de design que permite injetar as dependências necessárias para cada classe em vez de criá-las dentro da classe. Isso torna o código mais flexível e mais fácil de testar e manter, o que é especialmente útil em projetos grandes e complexos.
