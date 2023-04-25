@@ -33,3 +33,22 @@ Para implementar o padrão Factory Method, primeiro criamos uma interface chamad
 Cada uma dessas classes concretas é responsável por criar um objeto Pagamento, que pode ter diferentes implementações dependendo do método de pagamento escolhido. Por exemplo, a classe CartaoCreditoPagamentoFactory pode criar um objeto Pagamento que representa um pagamento com cartão de crédito, enquanto a classe BoletoBancarioPagamentoFactory pode criar um objeto Pagamento que representa um pagamento com boleto bancário.
 
 Dessa forma, quando um usuário escolhe um método de pagamento, o sistema de pagamento utiliza a classe correspondente àquele método de pagamento para criar o objeto Pagamento apropriado. Isso permite que a lógica de criação do objeto seja delegada às subclasses, mantendo assim o código mais flexível e extensível.
+
+## Builder
+
+
+Quais são os participantes que constituem o padrão Builder?
+
+O padrão em questão é composto por quatro componentes básicos que são a Interface (ou classe abstrata) Builder, o concrete builder (construtor concreto), o Director (Diretor) e o product (produto). Vejamos a seguir o que cada um deles é responsável em fazer:
+
+    Classe Builder – esta classe especifica uma interface ou uma classe abstrata para a criação das partes (ou podemos considerar como sendo os passos que serão realizados) de um objeto a fim de criar corretamente o produto (Product). Cada um desses passos são, geralmente, abstrações das funcionalidades realizadas nas subclasses concretas.
+    Concrete Builder – esta classe é responsável pela construção e pela montagem das partes do produto por meio da implementação da classe builder. Ela define e mantém o controle da representação que a classe cria, além de fornecer uma interface para recuperação do produto.
+    Director – esta é a classe que controla o algoritmo responsável por gerar o objeto do produto final. Um objeto Director é instanciado e seus métodos construtores são chamados. O método inclui um parâmetro para capturar objetos específicos do tipo Concrete Builder que serão então utilizados para gerar o produto (product). Dessa forma, o director, chama os métodos do concrete builder na ordem correta para gerar o objeto produto.
+    Product – o product representa o objeto complexo que está sendo construído. O concrete builder então constrói a representação interna do produto e define o processo pelo qual essa classe será montada. Na classe product são incluídas outras classes que definem as partes que a constituem, dentre elas, as interfaces para a montagem das partes no resultado final.
+
+---
+Como tudo funciona no mundo Builder?
+
+Primeiramente, o client (cliente) poderá ser de certa forma, ou um objeto a parte ou mesmo o cliente real que chamará o método main() da aplicação, iniciando assim as classes Builder e Director. A classe Builder representa o nosso objeto complexo que precisa ser construído em termos de objetos e tipos mais simples. O construtor da classe Director recebe um objeto Builder como sendo um parâmetro através do cliente e é responsável por chamar os métodos apropriados da classe Builder. A fim de fornecer a classe cliente com uma interface para todos os construtores concretos, a classe Builder deve ser uma classe abstrata. Desta forma, podemos adicionar novos tipos de objetos apenas definindo a estrutura e reutilizando a lógica para o processo real da construção. O cliente é o único que precisa saber sobre os novos tipos, já a classe Director, precisa saber apenas quais os métodos que precisará chamar.
+
+https://www.devmedia.com.br/padrao-de-projeto-factory-method-em-java/26348
