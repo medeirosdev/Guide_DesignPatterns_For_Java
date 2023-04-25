@@ -110,3 +110,38 @@ Existem três tipos de injeção de dependência: injeção de construtor, inje�
 A injeção de dependência é especialmente útil em projetos grandes e complexos, onde as dependências podem ser difíceis de gerenciar. Ao desacoplar as classes do código, a injeção de dependência torna o código mais modular, o que facilita a manutenção, o teste e a reutilização do código.
 
 Em resumo, a injeção de dependência é um padrão de design que permite injetar as dependências necessárias para cada classe em vez de criá-las dentro da classe. Isso torna o código mais flexível e mais fácil de testar e manter, o que é especialmente útil em projetos grandes e complexos.
+
+
+## Decorator Pattern
+
+O padrão Decorator é um padrão de design de software que permite adicionar comportamentos adicionais a objetos existentes de forma dinâmica e transparente, sem a necessidade de alterar o código original do objeto.
+
+Imagine que você tem uma classe que representa um objeto, como uma bicicleta, por exemplo. Essa classe tem um conjunto de comportamentos e propriedades que definem como a bicicleta funciona e se comporta. Agora, imagine que você queira adicionar um novo comportamento à bicicleta, como um sistema de navegação por GPS.
+
+Com o padrão Decorator, você pode criar uma nova classe que envolve a classe original da bicicleta e adiciona o novo comportamento. Essa nova classe é chamada de "decorator". O decorator pode ser criado sem alterar a classe original da bicicleta e pode ser adicionado ou removido dinamicamente durante a execução do programa.
+
+O decorator funciona como uma camada extra de comportamento que envolve a classe original. Quando você chama um método no objeto decorado, o decorator intercepta a chamada e adiciona ou modifica o comportamento do método. Em seguida, ele passa a chamada para a classe original, que executa o comportamento original e retorna o resultado para o decorator.
+
+Um dos principais benefícios do padrão Decorator é que ele permite que você adicione comportamentos dinamicamente, sem a necessidade de alterar o código original. Isso torna o código mais modular e mais fácil de manter, especialmente em projetos grandes e complexos.
+
+Além disso, o padrão Decorator também permite que você combine vários decoradores para adicionar vários comportamentos a um objeto. Isso significa que você pode adicionar um sistema de navegação por GPS, um suporte para celular e um alarme de segurança, por exemplo, tudo sem precisar alterar o código original da bicicleta.
+
+Em resumo, o padrão Decorator é um padrão de design de software que permite adicionar comportamentos adicionais a objetos existentes de forma dinâmica e transparente, sem a necessidade de alterar o código original do objeto. Isso torna o código mais modular e mais fácil de manter, especialmente em projetos grandes e complexos.
+
+## Strategy Pattern
+
+O padrão Strategy é um padrão de design de software que permite que você defina uma família de algoritmos, encapsulando cada um deles e tornando-os intercambiáveis. O padrão Strategy permite que o algoritmo seja selecionado em tempo de execução, dependendo do contexto em que o código está sendo executado.
+
+Imagine que você esteja criando um programa de processamento de pagamento online que deve suportar vários métodos de pagamento, como cartão de crédito, PayPal, transferência bancária e Bitcoin. Cada um desses métodos de pagamento tem um algoritmo diferente para processar o pagamento.
+
+Com o padrão Strategy, você pode criar uma interface que defina um algoritmo comum para processar pagamentos. Em seguida, você pode criar várias classes que implementam essa interface, cada uma representando um método de pagamento diferente.
+
+Em tempo de execução, você pode escolher qual classe de pagamento usar e, em seguida, chamar o método para processar o pagamento. Isso permite que você mude facilmente o método de pagamento em tempo de execução, sem precisar mudar o código que chama o método.
+
+Outro benefício do padrão Strategy é que ele permite que você crie novos algoritmos facilmente, simplesmente criando uma nova classe que implementa a interface comum. Isso significa que você pode facilmente adicionar suporte para novos métodos de pagamento sem precisar alterar o código existente.
+
+Além disso, o padrão Strategy também ajuda a reduzir a duplicação de código, pois cada algoritmo é encapsulado em sua própria classe separada. Isso torna o código mais organizado e mais fácil de entender e manter.
+
+Em resumo, o padrão Strategy é um padrão de design de software que permite que você defina uma família de algoritmos, encapsulando cada um deles e tornando-os intercambiáveis. Isso permite que o algoritmo seja selecionado em tempo de execução, dependendo do contexto em que o código está sendo executado. O padrão Strategy é especialmente útil quando você precisa de vários algoritmos diferentes que são selecionados dinamicamente durante a execução do programa.
+
+https://refactoring.guru/design-patterns/strategy
