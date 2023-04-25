@@ -52,3 +52,21 @@ Como tudo funciona no mundo Builder?
 Primeiramente, o client (cliente) poderá ser de certa forma, ou um objeto a parte ou mesmo o cliente real que chamará o método main() da aplicação, iniciando assim as classes Builder e Director. A classe Builder representa o nosso objeto complexo que precisa ser construído em termos de objetos e tipos mais simples. O construtor da classe Director recebe um objeto Builder como sendo um parâmetro através do cliente e é responsável por chamar os métodos apropriados da classe Builder. A fim de fornecer a classe cliente com uma interface para todos os construtores concretos, a classe Builder deve ser uma classe abstrata. Desta forma, podemos adicionar novos tipos de objetos apenas definindo a estrutura e reutilizando a lógica para o processo real da construção. O cliente é o único que precisa saber sobre os novos tipos, já a classe Director, precisa saber apenas quais os métodos que precisará chamar.
 
 https://www.devmedia.com.br/padrao-de-projeto-factory-method-em-java/26348
+
+## Abstract Factory Pattern
+
+O padrão Abstract Factory é um padrão de projeto de software que ajuda a criar famílias de objetos relacionados sem especificar suas classes concretas. Isso permite que você crie objetos relacionados sem ter que se preocupar com os detalhes de como eles são criados ou como funcionam internamente.
+
+O padrão Abstract Factory consiste em duas partes principais: a fábrica abstrata e as fábricas concretas. A fábrica abstrata define uma interface para criar objetos relacionados, enquanto as fábricas concretas implementam essa interface para criar objetos específicos.
+
+Por exemplo, suponha que você esteja criando um jogo e precise criar personagens para o jogo. Em vez de criar cada personagem manualmente, você pode usar o padrão Abstract Factory para criar uma fábrica abstrata de personagens e, em seguida, criar fábricas concretas para cada tipo de personagem que deseja criar. Cada fábrica concreta irá criar personagens específicos com base na fábrica abstrata.
+
+Essas fábricas concretas podem ser organizadas em uma hierarquia para criar famílias de objetos relacionados. Por exemplo, você pode ter uma fábrica abstrata de personagens que cria fábricas concretas para personagens de guerreiros, magos e ladrões. Cada fábrica concreta de personagens irá criar personagens específicos de acordo com a classe de personagem.
+
+O padrão Abstract Factory é especialmente útil quando você precisa criar objetos que dependem de um contexto específico, como criar objetos em diferentes plataformas ou para diferentes bancos de dados. Ele também pode ser usado para criar objetos relacionados de forma consistente e modular, sem ter que conhecer os detalhes de como eles são criados ou como funcionam internamente.
+
+#### UML class diagram example for the Abstract Factory Design Pattern. 
+- AbstractFactory: Declares an interface for operations that create abstract product objects. 
+- ConcreteFactory: Implements the operations declared in the AbstractFactory to create concrete product objects.
+- Product: Defines a product object to be created by the corresponding concrete factory and implements the AbstractProduct interface.
+- Client: Uses only interfaces declared by AbstractFactory and AbstractProduct classes.
