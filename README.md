@@ -25,3 +25,11 @@ Da mesma forma, em Java, o Factory Method é um padrão de projeto que permite c
 
 "O Padrão Factory Method Define uma interface para criar um Objeto, mas permite que as classes que implementam a interface decidam qual classe instanciar. 
 o Factory Method permite uma classe delegar a instanciação a subclasse".
+
+Um exemplo de uso do padrão Factory Method é em um sistema de pagamento online que permite diferentes métodos de pagamento, como cartão de crédito, boleto bancário, transferência bancária, entre outros.
+
+Para implementar o padrão Factory Method, primeiro criamos uma interface chamada PagamentoFactory, que define o método criarPagamento(). Em seguida, criamos classes concretas que implementam essa interface para cada método de pagamento que desejamos suportar, como CartaoCreditoPagamentoFactory, BoletoBancarioPagamentoFactory e TransferenciaBancariaPagamentoFactory.
+
+Cada uma dessas classes concretas é responsável por criar um objeto Pagamento, que pode ter diferentes implementações dependendo do método de pagamento escolhido. Por exemplo, a classe CartaoCreditoPagamentoFactory pode criar um objeto Pagamento que representa um pagamento com cartão de crédito, enquanto a classe BoletoBancarioPagamentoFactory pode criar um objeto Pagamento que representa um pagamento com boleto bancário.
+
+Dessa forma, quando um usuário escolhe um método de pagamento, o sistema de pagamento utiliza a classe correspondente àquele método de pagamento para criar o objeto Pagamento apropriado. Isso permite que a lógica de criação do objeto seja delegada às subclasses, mantendo assim o código mais flexível e extensível.
